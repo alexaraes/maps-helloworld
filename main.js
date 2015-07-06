@@ -1,7 +1,7 @@
 function initialize() {
   var myLatlng = new google.maps.LatLng(30.252738,-97.723682);
   var mapOptions = {
-    zoom: 10,
+    zoom: 15,
     center: myLatlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -20,6 +20,9 @@ function initialize() {
       position: myLatlng,
       map: map,
       title: 'Launderette'
+  });
+   google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
   });
 }
 
